@@ -1,0 +1,19 @@
+spring:
+    application:
+        name: password-validation-service
+
+server:
+    port: 9098
+
+password:
+    validation:
+        minimum-eight-characters: true #set true if length of password is at least eight, false otherwise
+        at-least-one-upper: true # set true if password needs at least one uppercase character
+        at-least-one-lower: false # set true if password needs at least one lowercase character
+        at-least-one-number: true # set true if password needs at least one number character
+        at-least-one-special: false # set true if password needs at least one special character
+
+
+
+
+
