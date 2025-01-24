@@ -117,5 +117,18 @@ class PasswordValidationServiceImplTest {
         assertTrue(isPasswordValid);
     }
 
+    @Test
+    void validPassword_SpecialCharacterFalse() {
+
+        given(passwordConfiguration.isAtLeastOneUpperCase()).willReturn(true);
+        given(passwordConfiguration.isAtLeastOneLowerCase()).willReturn(true);
+        given(passwordConfiguration.isAtLeastOneSpecialCharacter()).willReturn(false);
+        given(passwordConfiguration.isAtLeastOneNumber()).willReturn(true);
+        given(passwordConfiguration.isMinimumEightCharacters()).willReturn(true);
+        String password = "Password1";
+        boolean isPasswordValid = passwordValidationService.passwordIsValid(password);
+        assertTrue(isPasswordValid);
+    }
+
 
 }
